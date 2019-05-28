@@ -1,0 +1,11 @@
+{
+    "name": "circle-ci-tests",
+    "version": "1.0.0",
+    "main": "src/main.js",
+    "repository": "https://github.com/cviejo/circle-ci-tests",
+    "author": "cviejo <carlos.viejo.muros@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "test": "echo 'ok'"
+    }
+}

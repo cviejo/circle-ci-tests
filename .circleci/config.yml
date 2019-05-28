@@ -1,0 +1,22 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: eyesquare/base-images:core-2.3.2
+    working_directory: ~/content
+    steps:
+      - setup_remote_docker:
+          docker_layer_caching: true # https://circleci.com/docs/2.0/docker-layer-caching/
+      - run:
+          name: prepare docker environment
+          command: |
+            docker ps -a
+            docker images
+            docker system df
+            df -h
+      - checkout
+      - run: docker build -t app1 -f docker/test.dockerfile .
